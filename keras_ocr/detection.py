@@ -34,9 +34,9 @@ from . import tools
 def compute_input(image):
     # should be RGB order
     image = image.astype("float32")
-    mean = np.array([0.485, 0.456, 0.406])
-    variance = np.array([0.229, 0.224, 0.225])
-
+    mean = np.array([0.485, 0.456, 0.406]).reshape((1, 1, 3))
+    variance = np.array([0.229, 0.224, 0.225]).reshape((1, 1, 3))
+    
     image -= mean * 255
     image /= variance * 255
     return image
